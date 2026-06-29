@@ -21,17 +21,17 @@ public class Main {
 
     public static void selectionSort(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
-            int minValue = arr[i];
-            int minIndex = i;
+            int maxIndex = i;
+            int maxValue = arr[i];
             for (int j = i + 1; j < arr.length; j++) {
-                if (arr[j] > minValue) {
-                    minValue = arr[j];
-                    minIndex = j;
+                if (arr[j] > maxValue) {
+                    maxIndex = j;
+                    maxValue = arr[j];
                 }
             }
-            if (minIndex != i) {
-                arr[minIndex] = arr[i];
-                arr[i] = minValue;
+            if (maxIndex != i) {
+                arr[maxIndex] = arr[i];
+                arr[i] = maxValue;
             }
         }
     }
